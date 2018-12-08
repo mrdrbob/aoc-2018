@@ -106,6 +106,23 @@ pub fn execute_six() {
     let largest_score = coord_scores.values().max_by_key(|&g| g).unwrap();
     println!("Largest area: {}", largest_score);
 
+    let mut safe_points = 0;
+    for x in 0..width {
+        for y in 0..height {
+            let pos = (x, y);
+            let mut distances = 0;
+            for coord in &normalized_coords {
+                let dist = manhattan_distance(coord, &pos);
+                distances += dist;
+            }
+
+            if distances < 10000 {
+                safe_points += 1;
+            }
+        }
+    }
+
+    println!("Safe points: {}", safe_points);
 }
 
 fn manhattan_distance(t1:&(i32, i32), t2:&(i32, i32)) -> i32 {
