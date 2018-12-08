@@ -80,6 +80,21 @@ pub fn execute_day_4() {
     let (sleepiest_minute, time_spent) = sleepiest_guard.minute_dict.iter().max_by_key(|(&_, &val)| val).unwrap();
     println!("Sleepiest minute: {}", sleepiest_minute);
     println!("Time in minute: {}", time_spent);
+
+
+    // Part 2, which guard is most frequently asleep on the same minute?
+    let most_on_a_single_minute = guards.values().max_by_key(|g| {
+        match g.minute_dict.iter().max_by_key(|(_, v)| v.clone() ) {
+            None => 0,
+            Some((_, v)) => v.clone()
+        }
+    }).unwrap();
+
+    let (most_req_minute, minute_time) = most_on_a_single_minute.minute_dict.iter().max_by_key(|(_, v)| v.clone() ).unwrap().clone();
+
+    println!("Most on a single minute: {}", most_on_a_single_minute.id);
+    println!("Most freq minute: {}", most_req_minute);
+    println!("Time on said minute: {}", minute_time);
 }
 
 fn add_to_map(g:Guard, mut map:HashMap<String, Guard>) -> HashMap<String, Guard> {
