@@ -1,4 +1,5 @@
-mod day5;
+mod day6;
+//mod day5;
 //mod day4;
 //mod day3;
 //mod day2;
@@ -17,12 +18,10 @@ fn main() {
 
     // day_two();
     // day_two_part_two();
-
     // day_three();
     // day_three_part_two();
-
     // day4::execute_day_4();
-
-    day5::execute_day_5();
+    // day5::execute_day_5();
+    day6::execute_six();
 }
 
