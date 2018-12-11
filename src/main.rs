@@ -1,4 +1,5 @@
-mod day8;
+mod day9;
+//mod day8;
 //mod day7;
 //mod day6;
 //mod day5;
@@ -26,6 +27,7 @@ fn main() {
     // day5::execute_day_5();
     // day6::execute_six();
     // day7::day_seven_go_do_thing();
-    day8::day_eight_the_ocho();
+    // day8::day_eight_the_ocho();
+    day9::execute();
 }
 
