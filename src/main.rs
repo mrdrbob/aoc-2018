@@ -1,4 +1,5 @@
-mod day11;
+mod day12;
+//mod day11;
 //mod day10;
 //mod day9;
 //mod day8;
@@ -32,6 +33,7 @@ fn main() {
     // day8::day_eight_the_ocho();
     // day9::execute();
     // day10::execute();
-    day11::execute();
+    // day11::execute();
+    day12::execute();
 }
 
